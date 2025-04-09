@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="gradle-wrapper.jar" type="JarApplication">
+    <option name="JAR_PATH" value="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" />
+    <option name="PROGRAM_PARAMETERS" value="$Classpath$" />
+    <option name="WORKING_DIRECTORY" value="C:\Program Files\Zulu\zulu-21\wrapper\dists" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <envs>
+      <env name="C:\Program Files\Zulu\zulu-21" value="" />
+    </envs>
+    <module name="AgentAccesslogchat" />
+    <method v="2">
+      <option name="Gradle.BeforeRunTask" enabled="true" tasks="buildEnvironment" externalProjectPath="$PROJECT_DIR$/MyAndroidApp" vmOptions="" scriptParameters="" />
+      <option name="MakeProject" enabled="true" />
+      <option name="Gradle.BeforeRunTask" enabled="true" tasks="" externalProjectPath="$PROJECT_DIR$/gradle/wrapper" vmOptions="" scriptParameters="" />
+    </method>
+  </configuration>
+</component>

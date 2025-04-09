@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true">
+	<output-test url="file://$USER_HOME$/OneDrive/Documents/message-buddy-network/out/test/MyAndroidApp"/>
+	<exclude-output/>
+	<contentEntry url="file://$USER_HOME$/OneDrive/Documents/message-buddy-network/MyAndroidApp"/>
+</component>

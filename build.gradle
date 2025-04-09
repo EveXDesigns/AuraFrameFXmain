@@ -1,0 +1,78 @@
+subprojects {
+    afterEvaluate {
+        if (pluginManager.hasPlugin("com.android.application") || pluginManager.hasPlugin("com.android.library")) {
+            android {
+                compileSdk = 34
+                namespace = "com.example.myapp"
+
+                defaultConfig {
+                    minSdk = 24
+                    // Consider lowering to 24 (Android 7.0) to support more devices, if appropriate.
+                    targetSdk = 35
+                    versionCode = 1
+                    versionName = "1.0"
+
+                }
+
+                buildTypes {
+                    release {
+                        isMinifyEnabled = true
+                        proguardFiles(
+                                getDefaultProguardFile("proguard-android-optimize.txt"),
+                                "proguard-rules.pro"
+                        )
+                        signingConfig = signingConfigs.release
+                        isShrinkResources = true
+                    }
+                    debug {
+                        signingConfig = signingConfigs.debug
+                    }
+                }
+
+                signingConfigs {
+                    register("release") {
+                        storeFile = file("your_keystore.jks")
+                        // Keep the file path but add a comment.
+                        // In a real project, store these securely, e.g., in gradle.properties or environment variables.
+                        storePassword = "your_store_password"
+                        keyAlias = "your_key_alias"
+                        keyPassword = "your_key_password"
+                    }
+                    register("debug") {
+                        storeFile = file("debug.keystore")
+                        storePassword = "android"
+                    }
+                }
+
+                compileOptions {
+                    sourceCompatibility = JavaVersion.VERSION_17
+                    targetCompatibility = JavaVersion.VERSION_17
+                }
+
+                kotlinOptions {
+                    jvmTarget = "17"
+                }
+
+                buildFeatures {
+                    compose = true
+                }
+
+                composeOptions {
+                    kotlinCompilerExtensionVersion = "1.5.4"
+                }
+
+                packaging {
+                    resources {
+                        excludes += "/META-INF/{AL2.0,LGPL2.1}"
+                    }
+                }
+
+                testOptions {
+                    unitTests {
+                        isIncludeAndroidResources = true
+                    } // Closing brace added here
+                }
+            }
+        }
+    }
+}
